@@ -84,7 +84,9 @@ export class ShopComponent implements OnInit {
   }
   onReset() {
     this.searchTerm.nativeElement.value = '';
+    const maintainSort = this.shopParams.sort;
     this.shopParams = new ShopParams();
+    this.shopParams.sort = maintainSort;
     this.getProducts();
   }
 
